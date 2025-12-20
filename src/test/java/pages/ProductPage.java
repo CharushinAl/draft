@@ -14,5 +14,4 @@ public class ProductPage {
     public boolean isPageLoaded() {
         return driver.findElement(pageTitle).isDisplayed();
     }
-
 }

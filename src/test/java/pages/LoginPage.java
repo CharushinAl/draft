@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.Test;
 
 public class LoginPage {
     WebDriver driver;
@@ -19,7 +18,7 @@ public class LoginPage {
         driver.get("https://www.saucedemo.com/");
     }
 
-    public void login (String userName, String password) {
+    public void login(String userName, String password) {
         driver.findElement(userNameField).sendKeys(userName);
         driver.findElement(passwordField).sendKeys(password);
         driver.findElement(loginButton).click();
@@ -29,8 +28,7 @@ public class LoginPage {
         return driver.findElement(errorText).isDisplayed();
     }
 
-    public String  getErrorMessageText() {
+    public String getErrorMessageText() {
         return driver.findElement(errorText).getText();
     }
-    //boolean isErrorAppear = driver.findElement(By).isDisplayed();
 }

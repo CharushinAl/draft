@@ -1,18 +1,13 @@
 package tests;
 
-import org.openqa.selenium.WebDriver;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class LoginTest extends BaseTest{
-    private static final Logger log = LoggerFactory.getLogger(LoginTest.class);
-
+public class LoginTest extends BaseTest {
     @Test
-    public void checkLockedLogin () {
+    public void checkLockedLogin() {
         loginPage.open();
         loginPage.login("locked_out_user", "secret_sauce");
 
@@ -21,7 +16,7 @@ public class LoginTest extends BaseTest{
     }
 
     @Test
-    public void checkLogin () {
+    public void checkLogin() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
 
