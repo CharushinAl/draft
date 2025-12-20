@@ -10,6 +10,12 @@ import pages.ProductPage;
 
 import java.time.Duration;
 
+/**
+ * Prepares the test environment before each test method.
+ * Creates ChromeDriver instance with the specified window options,
+ * configures the implicit wait timeout, and initializes pages.
+ */
+
 public class BaseTest {
     WebDriver driver;
     LoginPage loginPage;
@@ -21,7 +27,7 @@ public class BaseTest {
         //options.addArguments("start-maximized");
         options.addArguments("--windows-size=1920,1080");
         options.addArguments("--guest");
-        // options.addArguments("--headless");
+        options.addArguments("--headless");
 
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));

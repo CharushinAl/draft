@@ -3,19 +3,21 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
-    WebDriver driver;
+/**
+ * This class represents the functionality of the page with auth form.
+ */
+public class LoginPage extends BasePage {
     By userNameField = By.cssSelector("[placeholder='Username']");
     By passwordField = By.cssSelector("[id='password']");
     By loginButton = By.cssSelector("[id='login-button']");
     By errorText = By.xpath("//*[@data-test='error']");
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public void open() {
-        driver.get("https://www.saucedemo.com/");
+        driver.get(BASE_URL);
     }
 
     public void login(String userName, String password) {
