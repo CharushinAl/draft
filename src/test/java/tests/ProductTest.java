@@ -13,11 +13,13 @@ public class ProductTest extends BaseTest {
     public void checkGoodsAdded() throws InterruptedException {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
-        productPage.isPageLoaded();
+        productPage.isPageLoaded("Products");
         productPage.setAddToCart("Test.allTheThings() T-Shirt (Red)");
         productPage.setAddToCart("Sauce Labs Bolt T-Shirt");
-        assertEquals(Integer.parseInt(productPage.checkGoodsQuantity()), 2);
-        Thread.sleep(10000);
+        productPage.setAddToCart(3);
 
+        assertEquals(Integer.parseInt(productPage.checkGoodsQuantity()), 3);
+        assertEquals(productPage.checkGoodsQuantityGetAttribute(), "shopping-cart-badge");
+        Thread.sleep(10000);
     }
 }
