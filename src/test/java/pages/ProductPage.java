@@ -14,6 +14,7 @@ public class ProductPage extends BasePage {
             "//div[text()='%s']//ancestor::div[@class='inventory_item']//button";
     // private static final String DATA_TEST_PATTERN = "//*[@data-test='%s']";
     private static final String TEXT_LOCATOR_PATTERN = "//*[text()='%s']";
+
     public ProductPage(WebDriver driver) {
         super(driver);
     }
@@ -29,6 +30,10 @@ public class ProductPage extends BasePage {
 
     public String checkGoodsQuantity() {
         return driver.findElement(cartBadge).getText();
+    }
+
+    public void switchToCart() {
+        driver.findElement(cartBadge).click();
     }
 
     public String checkGoodsQuantityGetAttribute() {

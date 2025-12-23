@@ -21,5 +21,6 @@ public class ProductTest extends BaseTest {
         assertEquals(Integer.parseInt(productPage.checkGoodsQuantity()), 3);
         assertEquals(productPage.checkGoodsQuantityGetAttribute(), "shopping-cart-badge");
         Thread.sleep(10000);
+
     }
 }
