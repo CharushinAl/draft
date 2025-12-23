@@ -20,6 +20,10 @@ public class LoginPage extends BasePage {
         driver.get(BASE_URL);
     }
 
+    public void open(String url) {
+        driver.get(BASE_URL + url);
+    }
+
     public void login(String userName, String password) {
         driver.findElement(userNameField).sendKeys(userName);
         driver.findElement(passwordField).sendKeys(password);
