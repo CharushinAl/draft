@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 /**
  * This class represents the functionality of the pages with a product showcase and cart.
  */
-
 public class ProductPage extends BasePage {
     // By pageTitle = By.xpath("//*[@data-test='title']");
     By cartBadge = By.xpath("//*[@data-test='shopping-cart-badge']");
