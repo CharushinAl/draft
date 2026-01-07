@@ -9,7 +9,6 @@ import static org.testng.Assert.assertTrue;
 /**
  * This class represents testing auth form functionality.
  */
-
 public class LoginTest extends BaseTest {
     @DataProvider(name = "invalidData")
     public Object[][] loginData() {
@@ -37,5 +36,4 @@ public class LoginTest extends BaseTest {
 
         assertTrue(productPage.isPageLoaded("Products"), "Register btn isn't visible");
     }
-
 }

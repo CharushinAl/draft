@@ -4,6 +4,9 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
+/**
+ * This class represents testing products cart functionality.
+ */
 public class CartTest extends BaseTest {
 
     @Test

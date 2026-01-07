@@ -6,6 +6,9 @@ import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 
+/**
+ * This class represents the functionality of the page with products cart.
+ */
 public class CartPage extends BasePage {
     By cartProduct = By.cssSelector(".inventory_item_name");
 
@@ -18,6 +21,7 @@ public class CartPage extends BasePage {
         for (WebElement product : driver.findElements(cartProduct)) {
             names.add(product.getText());
         }
+
         return names;
     }
 }
