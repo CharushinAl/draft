@@ -32,7 +32,7 @@ public class LoginTest extends BaseTest {
     @Test(description = "Checking for valid input data", priority = 2)
     public void checkLogin() {
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(user, password);
 
         assertTrue(productPage.isPageLoaded("Products"), "Register btn isn't visible");
     }

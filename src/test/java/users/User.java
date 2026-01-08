@@ -1,7 +1,5 @@
 package users;
 
-import javax.xml.transform.sax.SAXResult;
-
 public class User {
     private final String email;
     private final String password;

@@ -12,6 +12,7 @@ import org.testng.annotations.Parameters;
 import pages.CartPage;
 import pages.LoginPage;
 import pages.ProductPage;
+import utils.PropertyReader;
 
 import java.time.Duration;
 
@@ -25,13 +26,14 @@ public class BaseTest {
     LoginPage loginPage;
     ProductPage productPage;
     CartPage cartPage;
+    String user;
+    String password;
 
     @Parameters({"browser"})
     @BeforeMethod
     public void setup(@Optional("chrome") String browser) {
         if (browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
-
             ChromeOptions options = new ChromeOptions();
             //options.addArguments("start-maximized");
             options.addArguments("--windows-size=1920,1080");
@@ -47,6 +49,8 @@ public class BaseTest {
         loginPage = new LoginPage(driver);
         productPage = new ProductPage(driver);
         cartPage = new CartPage(driver);
+        user = PropertyReader.getProperty("saucedemo.user");
+        password = PropertyReader.getProperty("saucedemo.password");
     }
 
     @AfterMethod
