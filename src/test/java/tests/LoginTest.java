@@ -1,8 +1,10 @@
 package tests;
 
+import io.qameta.allure.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import static enums.TitleNaming.PRODUCTS;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -20,6 +22,14 @@ public class LoginTest extends BaseTest {
         };
     }
 
+    @Epic("Форма валидации")
+    @Feature("Корректный ввод")
+    @Story("Пользовательсткие данные")
+    @Severity(SeverityLevel.BLOCKER)
+    @Owner("charushinas@gmail.com")
+    @Issue("Duck")
+    @TmsLink("draft")
+    @Flaky
     @Test(description = "Checking for invalid input data", priority = 1, dataProvider = "invalidData")
     public void checkInvalidInput(String userName, String userPassword, String errMsg) {
         loginPage.open();
@@ -32,8 +42,8 @@ public class LoginTest extends BaseTest {
     @Test(description = "Checking for valid input data", priority = 2)
     public void checkLogin() {
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(user, password);
 
-        assertTrue(productPage.isPageLoaded("Products"), "Register btn isn't visible");
+        assertTrue(productPage.isPageLoaded(PRODUCTS.getDisplayName()), "Register btn isn't visible");
     }
 }
