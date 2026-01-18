@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -20,6 +21,14 @@ public class LoginTest extends BaseTest {
         };
     }
 
+    @Epic("Форма валидации")
+    @Feature("Корректный ввод")
+    @Story("Пользовательсткие данные")
+    @Severity(SeverityLevel.BLOCKER)
+    @Owner("charushinas@gmail.com")
+    @Issue("Duck")
+    @TmsLink("draft")
+    @Flaky
     @Test(description = "Checking for invalid input data", priority = 1, dataProvider = "invalidData")
     public void checkInvalidInput(String userName, String userPassword, String errMsg) {
         loginPage.open();
