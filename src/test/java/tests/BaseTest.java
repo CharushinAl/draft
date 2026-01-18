@@ -41,7 +41,7 @@ public class BaseTest {
             //options.addArguments("start-maximized");
             options.addArguments("--windows-size=1920,1080");
             options.addArguments("--guest");
-            //options.addArguments("--headless");
+            options.addArguments("--headless");
 
             driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase("edge")) {

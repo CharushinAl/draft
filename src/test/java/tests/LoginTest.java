@@ -4,6 +4,7 @@ import io.qameta.allure.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import static enums.TitleNaming.PRODUCTS;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -43,6 +44,6 @@ public class LoginTest extends BaseTest {
         loginPage.open();
         loginPage.login(user, password);
 
-        assertTrue(productPage.isPageLoaded("Products"), "Register btn isn't visible");
+        assertTrue(productPage.isPageLoaded(PRODUCTS.getDisplayName()), "Register btn isn't visible");
     }
 }
